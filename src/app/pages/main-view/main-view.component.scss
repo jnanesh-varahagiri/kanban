@@ -1,0 +1,99 @@
+.root{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.app-name {
+    font-size: 20px;
+    font-family: 'Lato','sans-serif';
+    font-weight: bold;
+}
+
+.has-gradient-text{
+    background:-webkit-linear-gradient(#13f7f4 ,#2af598);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+.board{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 0;
+    min-height: 0;
+    .board-bar{
+        background: rgba(grey,0.5);
+        padding: 8px 15px;
+    }
+    .board-name{
+        font-size: 22px;
+        font-weight: bold;
+        color:white;
+        text-shadow: 100%;
+    }
+
+    .board-wrapper{
+        display: flex;
+        flex-grow: 1;
+        overflow-x: auto;
+
+        .board-columns{
+            display: flex;
+            flex-grow: 1;
+            .board-column {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                background: rgba(white,0.5);
+                min-width: 300px;
+                margin: 40px;
+                padding: 25px;
+                border-radius: 4px;
+                background: rgba(white,0.5);
+
+                &:not(:first-child){
+                    margin-left: 0;
+                }
+                .column-title{
+                    font-size: 20px;
+                    font-weight: 800;
+                    font-family: 'Lato','sans-serif';
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+    }
+}
+
+.tasks-container{
+    flex-grow: 1;
+}
+
+.task{
+    display: flex;
+    padding: 15px 12px;
+    background:white;
+    border-bottom: solid 1px #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+}
+.board-column.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+/* Animate items as they're being sorted. */
+.cdk-drop-list-dragging .cdk-drag {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  
+  /* Animate an item that has been dropped. */
+  .cdk-drag-animating {
+    transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
+  }
